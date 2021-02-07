@@ -1,1 +1,1 @@
-# react-book-movie-app
+Movie Browsing using React.js
