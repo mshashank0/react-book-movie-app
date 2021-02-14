@@ -42,6 +42,11 @@
     margin: 15px;
 }
 
+.bookshow-button {
+    float: right;
+    margin-right: 8px;
+}
+
 @media (max-width: 992px) {
     .flex-container {
         flex-direction: column;

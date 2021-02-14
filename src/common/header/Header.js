@@ -11,6 +11,8 @@ import InputLabel from '@material-ui/core/InputLabel';
 import Input from '@material-ui/core/Input';
 import PropTypes from 'prop-types';
 import FormHelperText from '@material-ui/core/FormHelperText';
+import { Link } from 'react-router-dom';
+
 
 const TabContainer = function (props) {
     return (
@@ -117,6 +119,7 @@ class Header extends Component {
         this.setState({ contact: e.target.value });
     }
 
+
     render() {
         return <div className="header-strip">
             <header className="app-header">
@@ -126,6 +129,15 @@ class Header extends Component {
                         Login
                         </Button>
                 </div>
+                {this.props.showBookShowButton === "true" ?
+                        <div className="bookshow-button">
+                            <Link to={"/bookshow/" + this.props.id}>
+                                <Button variant="contained" color="primary">
+                                    Book Show
+                                </Button>
+                            </Link>
+                        </div>
+                        : ""}
             </header>
             <Modal ariaHideApp={false} isOpen={this.state.modalIsOpen} contentLabel="Login" onRequestClose={this.closeModalHandler} style={customStyles}>
                 <Tabs className="tabs" value={this.state.value} onChange={this.tabChangeHandler}>
